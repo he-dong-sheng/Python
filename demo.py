@@ -1,6 +1,7 @@
 #!usr/bin/python
-#coding:utf8
+#-*-coding:utf-8 -*-
 from bs4 import BeautifulSoup
+import json
 import urllib
 import urllib2
 import re
@@ -16,20 +17,23 @@ try:
     fout = open("test.html","w")
     fout.write(html_doc)
     soup = BeautifulSoup(html_doc,'html.parser',from_encoding='utf-8')
-    authors = soup.find_all('div',class_="author clearfix")
-    contents = soup.find_all('div',class_="content")
-    for author in authors:
-    	#print author
-    	print author.find('h2').get_text()
-    	#print author.find('div',class_="articleGender womenIcon")
-    	#print author.find('div',class_="content")
-    	#data['author'] = author.find('h2').get_text()
-    	#data['sex']= author.find('div',class_="articleGender womenIcon")
-    	#p = re.compile('<div class="articleGender (.*?)">(.*?)</div>')
-    #print len(authors)
-    #print authors
-    for content in contents:
-    	print content.find('span').get_text()
+    txts = soup.find_all('div',class_="article")
+    for txt in txts:
+        #print txt
+        author = txt.find('div',class_='author clearfix')
+        author = author.find('h2').get_text()
+        if txt.find('div',class_="articleGender")!=None:
+            age = txt.find('div',class_="articleGender").get_text()
+        else:
+            age = 'none'
+        contents = txt.find('span').get_text()
+
+        print author
+        #print age
+        #print contents
+        data={}
+        data['1']= author
+        print json.dumps(data, encoding="UTF-8", ensure_ascii=False)
 
 except urllib2.URLError, e:
     if hasattr(e,"code"):
