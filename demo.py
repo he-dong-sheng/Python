@@ -23,8 +23,8 @@ while True:
         request = urllib2.Request(url,headers = headers)
         response = urllib2.urlopen(request)
         html_doc = response.read()
-        fout = open("test.html","w")
-        fout.write(html_doc)
+        #fout = open("test.html","w")
+        #fout.write(html_doc)
         soup = BeautifulSoup(html_doc,'html.parser',from_encoding='utf-8')
         txts = soup.find_all('div',class_="article")
         for txt in txts:
