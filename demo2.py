@@ -6,10 +6,11 @@ db = MySQLdb.connect("localhost","root","","test" )
 
 # 使用cursor()方法获取操作游标 
 cursor = db.cursor()
+
 AUTHOR = "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"
 AGE = 16
 CONTENT = "CONTENT"
-value = ['AUTHOR', 16, 'CONTENT']
+
 # SQL 插入语句
 #sql = """INSERT INTO EMPLOYEE(AUTHOR,AGE,CONTENT) VALUES ('hhhhhhhhhhhhhhh', 18, 'test')"""
 try:
