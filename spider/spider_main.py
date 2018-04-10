@@ -41,8 +41,10 @@ class SpiderMain(object):
             except Exception as e:
                 print(str(e))
                 print 'craw failed'
-
+            #写入文件
             self.outputer.output_html()
+            #写入数据库
+            #self.outputer.output_mysql()
 
 
 if __name__ == "__main__":
