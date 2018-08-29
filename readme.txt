@@ -13,4 +13,4 @@ GitHub克隆到本地
 	2.进入仓库点击seting
 	3.把页面拉倒最下端，点击delete，填写仓库名，确认删除
 	
-	git bash 使用测试
+	git bash 
