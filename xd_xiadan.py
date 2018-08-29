@@ -44,10 +44,10 @@ def xiadan():
 	time.sleep(3)
 	## 加入购物车
 	## html/body/div[4]/div[2]/div[1]/div[2]/div[4]/a[2]
-	# driver.find_element_by_xpath('html/body/div[4]/div[2]/div[1]/div[2]/div[4]/a[2]').click()
+	driver.find_element_by_xpath('html/body/div[4]/div[2]/div[1]/div[2]/div[4]/a[2]').click()
 	## 立即购买
 	## html/body/div[4]/div[2]/div[1]/div[2]/div[4]/a[1]
-	driver.find_element_by_xpath('html/body/div[4]/div[2]/div[1]/div[2]/div[4]/a[1]').click()
+	# driver.find_element_by_xpath('html/body/div[4]/div[2]/div[1]/div[2]/div[4]/a[1]').click()
 	## 提交订单
 	## html/body/div[3]/div[6]/div[5]/div/div[3]/a
 	driver.find_element_by_xpath('html/body/div[3]/div[6]/div[5]/div/div[3]/a').click()

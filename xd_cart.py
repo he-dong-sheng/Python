@@ -39,12 +39,18 @@ def cart():
 	## html/body/div[4]/div/div[4]/ul/li[1]/div/div[1]/div[1]/a/img
 	driver.find_element_by_xpath('html/body/div[4]/div/div[4]/ul/li[1]/div/div[1]/div[1]/a/img').click()
 	all_h = driver.window_handles
-	print all_h
+	# print all_h
 	driver.switch_to_window(all_h[1])
 	time.sleep(3)
 	## 加入购物车
 	## html/body/div[4]/div[2]/div[1]/div[2]/div[4]/a[2]
+	old_num = driver.find_element_by_id('cartNum').text
+	print 'old_num:',old_num
 	driver.find_element_by_xpath('html/body/div[4]/div[2]/div[1]/div[2]/div[4]/a[2]').click()
+	time.sleep(2)
+	new_num = driver.find_element_by_id('cartNum').text
+	print 'new_num:',new_num
+	
 
 if __name__ == "__main__":
 	profile_directory = r'C:\Users\Administrator\AppData\Roaming\Mozilla\Firefox\Profiles\wtrzp7i2.profileToolsQA'

@@ -41,8 +41,8 @@ def xiquan():
 	driver.find_element_by_xpath('html/body/div[4]/div[2]/div[1]/div[2]/a').click()
 	## html/body/div[4]/div[2]/div[1]/div[3]/p  error-wrap
 	## html/body/div[4]/div[2]/div[1]/div[3]/p
-	info = driver.find_element_by_xpath('html/body/div[4]/div[2]/div[1]/div[3]/p').text
-	# info = driver.find_element_by_class_name('error-wrap').text
+	# info = driver.find_element_by_xpath('html/body/div[4]/div[2]/div[1]/div[3]/p').text
+	info = driver.find_element_by_tag_name('p').text
 	time.sleep(3)
 	print type(info)
 	# print len(info)
